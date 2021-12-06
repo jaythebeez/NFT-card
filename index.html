@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | NFT preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    body, *{
+      font-family: 'Open Sans', sans-serif;
+    }
+    :root{
+      --first-shade:#0c192c;
+      --second-shade:#0d1728;
+      --card-background:#15273f;
+      --eth-text:#00fff8;
+      --primary-text:#d1d9eb;
+      --secondary-text:#d1d9eb8f;
+      --tertiary-text:#d1d9ebcb;
+    }
+    *{
+      box-sizing: border-box;
+      margin:0;
+      padding:0;
+    }
+    body{
+      background-color:#0d1a2d;
+      height:100vh;
+      width:100%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction: column;
+    }
+    .card{
+      width:300px;
+      height:500px;
+      padding:20px;
+      background-color:var(--card-background);
+      border-radius:15px;
+      cursor:pointer;
+      box-shadow: 0px 0px 7px 20px #0b1626;
+    }
+    .card-section{
+      position:relative;
+    }
+    .hover{
+      position:absolute;
+      height:100%;
+      width:100%;
+      top:0;
+      left:0;
+      background-color:var(--eth-text);
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      opacity:0;
+      transition:.5s;
+      overflow:hidden;
+      border-radius: 10px;
+    }
+    .card-section:hover .hover{
+      opacity:75%;
+    }
+    .card-image{
+      width:100%;
+      object-fit: contain;
+      border-radius:10px;
+    }
+    .card h1{
+      font-size: 1.3rem;
+      color:var(--primary-text);
+      margin:15px 0;
+    }
+    .card h1:hover{
+      color:var(--eth-text);
+    }
+    .card p{
+      color:var(--secondary-text);
+      margin-bottom:15px;
+      font-size: 1rem;
+    }
+    .under-card{
+      display:flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+    .under-card img{
+      width:15px;
+      height:15px;
+    }
+    .eth-text{
+      color: var(--eth-text);
+    }
+    .time-left{
+      color:var(--tertiary-text);
+    }
+    .card-footer img{
+      width:30px;
+      height:30px;
+      border-radius:50%;
+      border:1.5px solid var(--primary-text);
+      margin-right: 15px;
+    }
+    .card-footer{
+      display:flex;
+      align-items: center;
+      color:var(--secondary-text);
+    }
+    .highlight-text{
+      color:var(--tertiary-text);
+    }
+    .highlight-text:hover{
+      color:var(--eth-text);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="card-section">
+      <img src="images/image-equilibrium.jpg" class="card-image"alt="">
+      <div class="hover"><img src="images/icon-view.svg" alt=""></div>
+    </div>
+    <h1>Equilibrium #3429</h1>
+    <p>Our Equilibrium collection promotes balance and calm.</p>
+    <div class="under-card">
+      <span class="eth-text"> <img src="images/icon-ethereum.svg" alt=""> 0.041 ETH</span>
+      <span class="time-left"> <img src="images/icon-clock.svg" alt=""> 3 days left</span>
+    </div>
+    <div class="card-footer">
+      <img src="images/image-avatar.png" alt=""><span>Creation of <span class="highlight-text">Jules Wyvern</span></span>
+    </div>
+  </div>
+
+  
+
+  
+  
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Bot Joshua</a>.
+  </div>
+</body>
+</html>
