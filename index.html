@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   
   <title>Frontend Mentor | NFT preview card component</title>
 
@@ -15,14 +12,16 @@
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
+
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
     body, *{
-      font-family: 'Open Sans', sans-serif;
+      font-family: 'Outfit', sans-serif;
     }
     :root{
       --first-shade:#0c192c;
       --second-shade:#0d1728;
       --card-background:#15273f;
-      --eth-text:#00fff8;
+      --eth-text:hsl(178, 100%, 50%);
       --primary-text:#d1d9eb;
       --secondary-text:#d1d9eb8f;
       --tertiary-text:#d1d9ebcb;
@@ -32,7 +31,7 @@
       margin:0;
       padding:0;
     }
-    body{
+    main{
       background-color:#0d1a2d;
       height:100vh;
       width:100%;
@@ -52,6 +51,8 @@
     }
     .card-section{
       position:relative;
+      height:264px;
+      width:100%;
     }
     .hover{
       position:absolute;
@@ -68,12 +69,15 @@
       overflow:hidden;
       border-radius: 10px;
     }
+    .hover img{
+      opacity:50%;
+    }
     .card-section:hover .hover{
       opacity:75%;
     }
     .card-image{
       width:100%;
-      object-fit: contain;
+      height:100%;
       border-radius:10px;
     }
     .card h1{
@@ -93,10 +97,7 @@
       display:flex;
       justify-content: space-between;
       margin-bottom: 15px;
-    }
-    .under-card img{
-      width:15px;
-      height:15px;
+      width:100%;
     }
     .eth-text{
       color: var(--eth-text);
@@ -115,6 +116,8 @@
       display:flex;
       align-items: center;
       color:var(--secondary-text);
+      padding-top:10px;
+      border-top:2px solid hsla(222, 39%, 87%, 0.144);
     }
     .highlight-text{
       color:var(--tertiary-text);
@@ -125,31 +128,26 @@
   </style>
 </head>
 <body>
-
-  <div class="card">
-    <div class="card-section">
-      <img src="images/image-equilibrium.jpg" class="card-image"alt="">
-      <div class="hover"><img src="images/icon-view.svg" alt=""></div>
+  <main>
+    <div class="card">
+      <div class="card-section">
+        <img src="images/image-equilibrium.jpg" class="card-image"alt="">
+        <div class="hover"><img src="images/icon-view.svg" alt=""></div>
+      </div>
+      <h1>Equilibrium #3429</h1>
+      <p>Our Equilibrium collection promotes balance and calm.</p>
+      <div class="under-card">
+        <span class="eth-text"> <img src="images/icon-ethereum.svg" alt=""> 0.041 ETH</span>
+        <span class="time-left"> <img src="images/icon-clock.svg" alt=""> 3 days left</span>
+      </div>
+      <div class="card-footer">
+        <img src="images/image-avatar.png" alt=""><span>Creation of <span class="highlight-text">Jules Wyvern</span></span>
+      </div>
     </div>
-    <h1>Equilibrium #3429</h1>
-    <p>Our Equilibrium collection promotes balance and calm.</p>
-    <div class="under-card">
-      <span class="eth-text"> <img src="images/icon-ethereum.svg" alt=""> 0.041 ETH</span>
-      <span class="time-left"> <img src="images/icon-clock.svg" alt=""> 3 days left</span>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Bot Joshua</a>.
     </div>
-    <div class="card-footer">
-      <img src="images/image-avatar.png" alt=""><span>Creation of <span class="highlight-text">Jules Wyvern</span></span>
-    </div>
-  </div>
-
-  
-
-  
-  
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Bot Joshua</a>.
-  </div>
+  </main>
 </body>
 </html>
